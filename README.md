@@ -2,7 +2,7 @@
 
 Track the Easter Bunny as he hops through South Charleston, West Virginia in real time! This fun and interactive web app is designed to engage families, kids, and holiday enthusiasts during the Easter season.
 
-![Bunny Screenshot]([https://](https://raw.githubusercontent.com/Harrsn/Easter-Bunny-Tracker/refs/heads/main/static/images/screenshot.png))
+![Bunny Screenshot]([https://raw.githubusercontent.com/Harrsn/Easter-Bunny-Tracker/refs/heads/main/static/images/screenshot.png])
 
 ## 🌟 Features
 
