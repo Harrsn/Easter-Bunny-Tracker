@@ -6,7 +6,7 @@ import base64
 app = Flask(__name__, static_folder="static")
 CORS(app, resources={r"/proxy": {"origins": "*"}})  # Allow CORS for /proxy
 
-TRACCAR_URL = "https://tracker.wvinternet.com/api/positions"
+TRACCAR_URL = "TRACCAR-URL"
 USERNAME = "USER"
 PASSWORD = "PASS"
 
