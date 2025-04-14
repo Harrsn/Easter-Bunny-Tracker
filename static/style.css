@@ -1,0 +1,223 @@
+/* General Layout */
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #f7e1d7;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Fullscreen Map */
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+/* Branding Section */
+.branding {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.branding img {
+    height: 40px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .branding img {
+        height: 30px;
+    }
+}
+
+/* Toolbar Panel */
+#toolbar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 240, 245, 0.95);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#toolbar label,
+#toolbar select {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    #toolbar {
+        flex-direction: column;
+        padding: 12px;
+        width: 90%;
+        left: 5%;
+        transform: none;
+    }
+
+    #toolbar label,
+    #toolbar select {
+        width: 100%;
+        text-align: center;
+    }
+
+    #toolbar select {
+        padding: 6px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Bunny Icon Marker */
+.bunny-icon {
+    width: 50px;
+    height: 50px;
+    background: url('/static/images/easter-bunny.png') no-repeat center center;
+    background-size: contain;
+}
+
+/* Falling Egg Animation */
+.falling-egg {
+    position: fixed;
+    top: -50px;
+    width: 150px;
+    height: 150px;
+    z-index: 9999;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Optional Extras Section (if used) */
+.extras {
+    background: #fff8f0;
+    padding: 1rem;
+    border-top: 2px solid #ffcccc;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.extras h3 {
+    margin-top: 0;
+    color: #cc66cc;
+}
+
+.extras ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.extras li {
+    margin-bottom: 0.5rem;
+}
+
+/* Loading Screen */
+#loading {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #f7e1d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #cc66cc;
+    text-align: center;
+}
+
+/* Spinner Design */
+.spinner {
+    border: 6px solid #ffe3ed;
+    border-top: 6px solid #cc66cc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Bouncing Bunny Animation */
+.bouncing-bunny {
+    width: 80px;
+    height: 80px;
+    animation: bounce 1s infinite ease-in-out;
+    margin: 10px 0;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Mobile-First Touch-Ups for Small Screens */
+@media (max-width: 480px) {
+    #toolbar {
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    #toolbar select {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .branding {
+        flex-direction: column;
+        padding: 4px 6px;
+        gap: 4px;
+    }
+
+    .branding img {
+        height: 28px;
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+    }
+
+    #loading p {
+        font-size: 1rem;
+    }
+}
