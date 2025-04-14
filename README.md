@@ -44,10 +44,8 @@ Track the Easter Bunny as he hops through South Charleston, West Virginia in rea
 | File                      | Purpose                                      |
 |---------------------------|----------------------------------------------|
 | `app.py`                  | Flask server handling routing and proxying   |
-| `static/js/script.js`     | Frontend interactivity and map logic         |
+| `static/script.js`     | Frontend interactivity and map logic         |
 | `templates/index.html`    | Main HTML page using Jinja2 template engine  |
-| `static/sounds/song.mp3`  | Background music                             |
-| `static/images/egg1-6.png`| Randomized egg animations                    |
 
 ## 📦 Installation (for local development)
 
@@ -58,16 +56,16 @@ Track the Easter Bunny as he hops through South Charleston, West Virginia in rea
 ```
 2.Create and activate a Python virtual environment:
 ```
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+  python -m venv venv
+  source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 Install dependencies:
 ```
-pip install -r requirements.txt
+  pip install -r requirements.txt
 ```
 Run the Flask app:
 ```
-flask run
+  flask run
 ```
 Visit `http://localhost:5000` in your browser to test.
 
