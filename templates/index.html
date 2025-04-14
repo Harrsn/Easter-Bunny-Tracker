@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Easter Bunny Tracker</title>
+
+    <!-- Icons & Mobile Support -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="loading">
+        <div id="spinner" class="spinner"></div> <!-- added ID for easier control -->
+        <img src="/static/images/easter-bunny.png" alt="Bouncing Bunny" class="bouncing-bunny">
+        <p>Loading your magical egg hunt...</p>
+    </div>
+
+    <!-- Interactive Map -->
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- Audio -->
+    <audio id="bunnyAudio" src="/static/sounds/bunny-hop.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="/static/sounds/song.mp3" preload="auto"></audio>
+
+    <!-- Toolbar UI -->
+    <div id="toolbar">
+        <label>
+            <input type="checkbox" id="followBunny" />
+            Follow The Bunny
+        </label>
+        <label for="zoneSelect">Select a Zone:</label>
+        <select id="zoneSelect">
+            <option value="">-- Select a Zone --</option>
+            <option value="zone1">April 14 - South Point, The Ridges & Coventry Woods</option>
+            <option value="zone2">April 14 - Ruthlawn</option>
+            <option value="zone3">April 14 - South Charleston Flats</option>
+            <option value="zone4">April 15 - Village Drive & Armor View</option>
+            <option value="zone5">April 15 - Spring Hill Flats</option>
+            <option value="zone6">April 15 - Spring Hill Avenue & Surrounding Areas</option>
+            <option value="zone7">April 16 - South Charleston Hills & Central Area</option>
+        </select>
+
+        <button id="toggleMusic" title="Play/Pause Music">
+            <i id="musicIcon" class="fas fa-music"></i>
+        </button>
+        <button id="shareButton" title="Share with friends!">📤 Share</button>
+    </div>
+
+    <!-- Logos / Branding -->
+    <div class="branding">
+        <a href="https://www.cityofsouthcharleston.com" target="_blank" title="Visit the City Website">
+            <img src="/static/images/city-logo.png" alt="City Logo" class="city-logo" />
+        </a>
+        <a href="https://www.wvinternet.com" target="_blank" title="Powered by SecureNet">
+            <img src="/static/images/securenet-logo.png" alt="Powered by SecureNet" class="securenet-logo" />
+        </a>
+    </div>
+    
+</body>
+</html>
